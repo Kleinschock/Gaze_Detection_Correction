@@ -1,7 +1,6 @@
 # Gesture-Based Presentation Control
 
 **Autor:** René Gökmen
-**Version:** 2.0
 **Datum:** 02.08.2025
 
 ## 1. Projektübersicht
