@@ -1,0 +1,7 @@
+.clinerules
+.cursor
+.idea
+.vscode
+*.iml
+out/
+build/

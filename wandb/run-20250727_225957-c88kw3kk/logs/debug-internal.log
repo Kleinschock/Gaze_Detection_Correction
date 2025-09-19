@@ -1,0 +1,11 @@
+{"time":"2025-07-27T22:59:57.5921215+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"G:\\Studium\\WF Machine Learning\\Projekt\\wandb\\run-20250727_225957-c88kw3kk\\logs\\debug-core.log"}
+{"time":"2025-07-27T22:59:58.1241413+02:00","level":"INFO","msg":"created new stream","id":"c88kw3kk"}
+{"time":"2025-07-27T22:59:58.1241413+02:00","level":"INFO","msg":"stream: started","id":"c88kw3kk"}
+{"time":"2025-07-27T22:59:58.1241413+02:00","level":"INFO","msg":"handler: started","stream_id":"c88kw3kk"}
+{"time":"2025-07-27T22:59:58.1241413+02:00","level":"INFO","msg":"sender: started","stream_id":"c88kw3kk"}
+{"time":"2025-07-27T22:59:58.124711+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"c88kw3kk"}
+{"time":"2025-07-27T22:59:58.3455726+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-27T23:01:13.5572042+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-27T23:01:13.5572042+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-27T23:01:14.5587476+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact model-c88kw3kk","runtime_seconds":20.5153108,"subtasks":[{"desc":"model.ckpt","runtime_seconds":2.1495216,"progress":"1.6MB/25.8MB"}]},{"desc":"uploading artifact model-c88kw3kk","runtime_seconds":18.4052377},{"desc":"uploading artifact model-c88kw3kk","runtime_seconds":12.9950731},{"desc":"uploading artifact model-c88kw3kk","runtime_seconds":10.9339993},{"desc":"uploading output.log","runtime_seconds":0.5970377,"progress":"6.3KB/6.3KB"},{"desc":"uploading wandb-summary.json","runtime_seconds":0.5970377,"progress":"10.2KB/10.2KB"},{"desc":"uploading config.yaml","runtime_seconds":0.3924687,"progress":"1.2KB/1.2KB"}],"total_operations":7}}
+{"time":"2025-07-27T23:02:20.8120213+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}

@@ -1,0 +1,14 @@
+wandb_version: 1
+
+batch_size:
+  value: 16
+dropout_rate:
+  value: 0.10903845058100424
+hidden_sizes:
+  value:
+  - 128
+  - 64
+learning_rate:
+  value: 0.001543536869210691
+weight_decay:
+  value: 0.0003803896180894637

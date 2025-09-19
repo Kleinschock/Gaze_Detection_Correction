@@ -1,0 +1,8 @@
+{"time":"2025-09-19T09:04:06.0516484+02:00","level":"INFO","msg":"main: starting server","port-filename":"C:\\Users\\Rene\\AppData\\Local\\Temp\\tmp0so6ptmx\\port-468.txt","pid":468,"log-level":0,"disable-analytics":false,"shutdown-on-parent-exit":false,"enable-dcgm-profiling":false}
+{"time":"2025-09-19T09:04:06.0536485+02:00","level":"INFO","msg":"server: will exit if parent process dies","ppid":468}
+{"time":"2025-09-19T09:04:06.0536485+02:00","level":"INFO","msg":"server: accepting connections","addr":{"IP":"127.0.0.1","Port":60049,"Zone":""}}
+{"time":"2025-09-19T09:04:06.0536485+02:00","level":"INFO","msg":"server: accepting connections","addr":{"Name":"C:\\Users\\Rene\\AppData\\Local\\Temp\\wandb-468-10008-1127509775\\socket","Net":"unix"}}
+{"time":"2025-09-19T09:04:06.2200432+02:00","level":"INFO","msg":"connection: ManageConnectionData: new connection created","id":"1(127.0.0.1:60050)"}
+{"time":"2025-09-19T09:04:06.2398928+02:00","level":"INFO","msg":"handleInformInit: received","streamId":"ra7kj9et","id":"1(127.0.0.1:60050)"}
+{"time":"2025-09-19T09:04:06.5829146+02:00","level":"INFO","msg":"handleInformInit: stream started","streamId":"ra7kj9et","id":"1(127.0.0.1:60050)"}
+{"time":"2025-09-19T09:04:22.9716513+02:00","level":"INFO","msg":"main: received shutdown signal","signal":15}

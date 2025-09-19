@@ -1,0 +1,11 @@
+{"time":"2025-07-27T22:38:44.4489374+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"G:\\Studium\\WF Machine Learning\\Projekt\\wandb\\run-20250727_223844-pnwa7xrn\\logs\\debug-core.log"}
+{"time":"2025-07-27T22:38:44.9354019+02:00","level":"INFO","msg":"created new stream","id":"pnwa7xrn"}
+{"time":"2025-07-27T22:38:44.9354019+02:00","level":"INFO","msg":"stream: started","id":"pnwa7xrn"}
+{"time":"2025-07-27T22:38:44.9354019+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"pnwa7xrn"}
+{"time":"2025-07-27T22:38:44.9354019+02:00","level":"INFO","msg":"handler: started","stream_id":"pnwa7xrn"}
+{"time":"2025-07-27T22:38:44.9354019+02:00","level":"INFO","msg":"sender: started","stream_id":"pnwa7xrn"}
+{"time":"2025-07-27T22:38:45.1495025+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-07-27T22:39:52.0943724+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-07-27T22:39:52.0943724+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-07-27T22:39:53.1013808+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact model-pnwa7xrn","runtime_seconds":14.0180132,"subtasks":[{"desc":"model.ckpt","runtime_seconds":13.1403882,"progress":"10.8MB/54.6MB"}]},{"desc":"uploading artifact model-pnwa7xrn","runtime_seconds":11.7336979}],"total_operations":2}}
+{"time":"2025-07-27T22:41:07.267056+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}

@@ -1,0 +1,380 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Sri Lanka Journey</title>
+
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+  <style>
+    .notification {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 16px;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .notification.show {
+      opacity: 1;
+    }
+    .slide-title {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-size: 20px;
+      z-index: 10;
+    }
+    .image-container {
+      position: relative;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .slide-image {
+      max-height: 80vh;
+      max-width: 90%;
+    }
+    .gesture-hint {
+      font-style: italic;
+      margin-top: 15px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .photo-counter {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    #tutorial-toolbar {
+      position: absolute;
+      top: -33vh; /* Start hidden above the screen */
+      left: 0;
+      width: 100%;
+      height: 33vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 20;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: top 0.8s ease-in-out;
+    }
+    #tutorial-toolbar.visible {
+      top: 0; /* Slide into view */
+    }
+    .instruction-text {
+      font-size: 2.5em;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      display: none; /* Hide all by default */
+    }
+    .instruction-text.visible {
+      display: block; /* Show the active one */
+    }
+    body.locked {
+      background-color: #3d0000; /* Dark red tint */
+      transition: background-color 0.5s ease;
+    }
+    @keyframes pulse {
+      0% { background-color: #003d00; }
+      50% { background-color: #008a00; }
+      100% { background-color: #003d00; }
+    }
+    .pulse-animation {
+      animation: pulse 1s ease-in-out;
+    }
+    #idle-tooltip {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 1.2em;
+      z-index: 30;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      pointer-events: none;
+      max-width: 300px;
+    }
+    #idle-tooltip.visible {
+      opacity: 1;
+    }
+  </style>
+
+  <!-- in here you'll find initializers for the websockets and some helper methods -->
+  <script src="helper_methods.js"></script>
+
+  <!-- this script holds code that listens on websocket events -->
+  <script src="event_listeners.js"></script>
+ </head>
+
+ <body>
+  <div id="tutorial-toolbar">
+    <p id="instruction-welcome" class="instruction-text"></p>
+    <p id="instruction-unlock" class="instruction-text"></p>
+    <p id="instruction-swipe" class="instruction-text"></p>
+    <p id="instruction-flip" class="instruction-text"></p>
+  </div>
+  <div class="reveal">
+   <div class="slides">
+    <!-- Main Title Slide -->
+    <section data-markdown>
+        # Gesture Controlled Slideshow
+
+        Navigate using these gestures:
+        - **Rolling**: Toggle Lock/Unlock
+        - **Swipe Left**: Go to previous slide
+        - **Swipe Right**: Go to next slide
+        - **Flip**: Go to the slide below
+
+        Press '?' to see all keyboard controls.
+    </section>
+
+    <!-- Beach Section -->
+    <section>
+      <section>
+        <h2>Sri Lanka's Beautiful Beaches</h2>
+        <p>The amazing beach view</p>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Strand (1).jpg" class="slide-image" alt="Beach view 1">
+          <div class="photo-counter">Beach 1/7</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Strand (2).jpg" class="slide-image" alt="Beach view 2">
+          <div class="photo-counter">Beach 2/7</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Strand (3).jpg" class="slide-image" alt="Beach view 3">
+          <div class="photo-counter">Beach 3/7</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Strand (4).jpg" class="slide-image" alt="Beach view 4">
+          <div class="photo-counter">Beach 4/7</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Strand (5).jpg" class="slide-image" alt="Beach view 5">
+          <div class="photo-counter">Beach 5/7</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Strand (6).jpg" class="slide-image" alt="Beach view 6">
+          <div class="photo-counter">Beach 6/7</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Strand (7).jpg" class="slide-image" alt="Beach view 7">
+          <div class="photo-counter">Beach 7/7</div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Nature Section -->
+    <section>
+      <section>
+        <h2>Sri Lanka's Natural Beauty</h2>
+        <p>Overgrown landscapes and beautiful nature</p>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Nature (1).jpg" class="slide-image" alt="Nature view 1">
+          <div class="photo-counter">Nature 1/7</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Nature (2).jpg" class="slide-image" alt="Nature view 2">
+          <div class="photo-counter">Nature 2/7</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Nature (3).jpg" class="slide-image" alt="Nature view 3">
+          <div class="photo-counter">Nature 3/7</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Nature (4).jpg" class="slide-image" alt="Nature view 4">
+          <div class="photo-counter">Nature 4/7</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Nature (5).jpg" class="slide-image" alt="Nature view 5">
+          <div class="photo-counter">Nature 5/7</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Nature (6).jpg" class="slide-image" alt="Nature view 6">
+          <div class="photo-counter">Nature 6/7</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Nature (7).jpg" class="slide-image" alt="Nature view 7">
+          <div class="photo-counter">Nature 7/7</div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Animals Section -->
+    <section>
+      <section>
+        <h2>Sri Lanka's Wildlife</h2>
+        <p>Which we don't have in germany!</p>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Animals (1).jpg" class="slide-image" alt="Animals 1">
+          <div class="photo-counter">Wildlife 1/2</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Animals (2).jpg" class="slide-image" alt="Animals 2">
+          <div class="photo-counter">Wildlife 2/2</div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Buildings Section -->
+    <section>
+      <section>
+        <h2>Sri Lankan Architecture</h2>
+        <p>Explore the beautiful buildings and structures</p>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Building (1).jpg" class="slide-image" alt="Building 1">
+          <div class="photo-counter">Architecture 1/2</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-container">
+          <img src="images/Building (2).jpg" class="slide-image" alt="Building 2">
+          <div class="photo-counter">Architecture 2/2</div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Final Slide -->
+    <section>
+      <h2>Thank You!</h2>
+      <p>Images from Nathalie's Sri Lanka Journey</p>
+      <p>Machine Learning Project of Anup, Nathalie and Rene</p>
+      <p class="gesture-hint">Gesture Recognition Demo</p>
+    </section>
+   </div>
+  </div>
+
+  <!-- Notification element for providing feedback to the user -->
+  <div id="notification" class="notification"></div>
+  <div id="idle-tooltip"></div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+
+  <script>
+    // Ensure the DOM is fully loaded before initializing everything.
+    document.addEventListener('DOMContentLoaded', (event) => {
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        hash: true,
+        loop: true,
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+
+      // Initialize WebSocket connection now that the DOM is ready
+      connectWebSocket();
+    });
+
+    // Display appropriate notification when gesture is detected
+    document.addEventListener('socket-event', function(e) {
+      const command = e.detail;
+      const notificationElement = document.getElementById('notification');
+
+      let message = '';
+
+      switch(command) {
+        case 'left':
+          message = 'Swipe Left: Previous Section';
+          break;
+        case 'right':
+          message = 'Swipe Right: Next Section';
+          break;
+        case 'rolling':
+          message = 'Rolling: System Unlocked';
+          break;
+        case 'flip':
+          message = 'Flip: System Locked';
+          break;
+      }
+
+      notificationElement.textContent = message;
+      notificationElement.classList.add('show');
+
+      // Hide notification after a delay
+      setTimeout(function() {
+        notificationElement.classList.remove('show');
+      }, 2000);
+    });
+  </script>
+ </body>
+</html>

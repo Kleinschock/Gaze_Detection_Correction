@@ -1,0 +1,42 @@
+{
+  "os": "Windows-10-10.0.26100-SP0",
+  "python": "CPython 3.10.6",
+  "startedAt": "2025-09-19T07:05:00.698802Z",
+  "args": [
+    "--model",
+    "gru"
+  ],
+  "program": "-m src.train",
+  "git": {
+    "remote": "https://github.com/Kleinschock/Projekt.git",
+    "commit": "d89967f3360326be400039f0f3e669ad83cc1eb1"
+  },
+  "email": "goekmen.rene@gmail.com",
+  "root": ".",
+  "host": "DESKTOP-R50QVME",
+  "executable": "G:\\Studium\\WF Machine Learning\\Projekt - Kopie\\.venv\\Scripts\\python.exe",
+  "cpu_count": 10,
+  "cpu_count_logical": 16,
+  "gpu": "NVIDIA GeForce RTX 4070",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "2000381014016",
+      "used": "1448836190208"
+    }
+  },
+  "memory": {
+    "total": "34163437568"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4070",
+      "memoryTotal": "12878610432",
+      "cudaCores": 5888,
+      "architecture": "Ada",
+      "uuid": "GPU-bee4b136-7f29-1260-0d88-adcadb820030"
+    }
+  ],
+  "cudaVersion": "12.8",
+  "writerId": "xq8jsyf0movdadcfdzerzb8k7g7wz3f1"
+}

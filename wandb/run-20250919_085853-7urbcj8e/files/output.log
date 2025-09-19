@@ -1,0 +1,39 @@
+[34m[1mwandb[0m: logging graph, to disable use `wandb.watch(log_graph=False)`
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+Starting training for GRU model...
+You are using a CUDA device ('NVIDIA GeForce RTX 4070') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+Running in standard mode (no segmentation).
+Scanning data files...
+Using dedicated idle data strategy for GRU/FFNN models.
+Found 7157 total sequences.
+Dataset split: 5727 training, 715 validation, 715 test samples.
+G:\Studium\WF Machine Learning\Projekt - Kopie\.venv\lib\site-packages\pytorch_lightning\callbacks\model_checkpoint.py:658: Checkpoint directory G:\Studium\WF Machine Learning\Projekt - Kopie\models exists and is not empty.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name                 | Type                      | Params | Mode
+---------------------------------------------------------------------------
+0 | model                | GRUNet                    | 176 K  | train
+1 | criterion            | CrossEntropyLoss          | 0      | train
+2 | train_accuracy       | MulticlassAccuracy        | 0      | train
+3 | val_accuracy         | MulticlassAccuracy        | 0      | train
+4 | test_accuracy        | MulticlassAccuracy        | 0      | train
+5 | val_confusion_matrix | MulticlassConfusionMatrix | 0      | train
+---------------------------------------------------------------------------
+176 K     Trainable params
+0         Non-trainable params
+176 K     Total params
+0.705     Total estimated model params size (MB)
+12        Modules in train mode
+0         Modules in eval mode
+Epoch 3:  75%|▋| 267/358 [00:02<00:00, 121.71it/s, v_num=cj8e, train_loss_step=0.656, val_loss=0.766, val_acc=0.655, train_loss_epoch=0.839, train_
+                                                                                                                                                   
+Metric val_acc improved. New best score: 0.365
+Epoch 0, global step 358: 'val_acc' reached 0.36503 (best 0.36503), saving model to 'G:\\Studium\\WF Machine Learning\\Projekt - Kopie\\models\\gru_main_model-epoch=00-val_acc=0.3650.ckpt' as top 1
+Metric val_acc improved by 0.206 >= min_delta = 0.001. New best score: 0.571
+Epoch 1, global step 716: 'val_acc' reached 0.57063 (best 0.57063), saving model to 'G:\\Studium\\WF Machine Learning\\Projekt - Kopie\\models\\gru_main_model-epoch=01-val_acc=0.5706.ckpt' as top 1
+Metric val_acc improved by 0.084 >= min_delta = 0.001. New best score: 0.655
+Epoch 2, global step 1074: 'val_acc' reached 0.65455 (best 0.65455), saving model to 'G:\\Studium\\WF Machine Learning\\Projekt - Kopie\\models\\gru_main_model-epoch=02-val_acc=0.6545.ckpt' as top 1
+
+Detected KeyboardInterrupt, attempting graceful shutdown ...

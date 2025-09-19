@@ -1,0 +1,3 @@
+Gesture,Filename,Start Row,End Row,Length,Reason
+rotate,Rotate_Nathi_finished_with_ground_truth.csv,79,169,91,Too Long
+swipe_left,SwipeLeft_Nathi_finished_with_ground_truth.csv,599,646,48,Too Long

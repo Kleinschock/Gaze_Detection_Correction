@@ -1,0 +1,90 @@
+_wandb:
+    value:
+        cli_version: 0.21.0
+        e:
+            xq8jsyf0movdadcfdzerzb8k7g7wz3f1:
+                args:
+                    - --model
+                    - gru
+                cpu_count: 10
+                cpu_count_logical: 16
+                cudaVersion: "12.8"
+                disk:
+                    /:
+                        total: "2000381014016"
+                        used: "1448836190208"
+                email: goekmen.rene@gmail.com
+                executable: G:\Studium\WF Machine Learning\Projekt - Kopie\.venv\Scripts\python.exe
+                git:
+                    commit: d89967f3360326be400039f0f3e669ad83cc1eb1
+                    remote: https://github.com/Kleinschock/Projekt.git
+                gpu: NVIDIA GeForce RTX 4070
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 5888
+                      memoryTotal: "12878610432"
+                      name: NVIDIA GeForce RTX 4070
+                      uuid: GPU-bee4b136-7f29-1260-0d88-adcadb820030
+                host: DESKTOP-R50QVME
+                memory:
+                    total: "34163437568"
+                os: Windows-10-10.0.26100-SP0
+                program: -m src.train
+                python: CPython 3.10.6
+                root: .
+                startedAt: "2025-09-19T07:05:00.698802Z"
+                writerId: xq8jsyf0movdadcfdzerzb8k7g7wz3f1
+        m:
+            - "1": trainer/global_step
+              "6":
+                - 3
+              "7": []
+            - "2": '*'
+              "5": 1
+              "6":
+                - 1
+              "7": []
+        python_version: 3.10.6
+        t:
+            "1":
+                - 1
+                - 9
+                - 41
+                - 103
+            "2":
+                - 1
+                - 9
+                - 41
+                - 103
+            "3":
+                - 1
+                - 7
+                - 15
+                - 62
+                - 66
+            "4": 3.10.6
+            "5": 0.21.0
+            "8":
+                - 3
+            "12": 0.21.0
+            "13": windows-amd64
+class_balancing_strategy:
+    value: weighted_loss
+class_weights:
+    value: tensor([1.9680, 2.1546, 1.3022, 2.4165, 1.3996, 0.3193], device='cuda:0')
+input_size:
+    value: 207
+learning_rate:
+    value: 0.0001
+model_name:
+    value: gru
+model_params:
+    value:
+        dropout_rate: 0.5
+        hidden_sizes:
+            - 128
+            - 64
+            - 32
+weight_decay:
+    value: 0.0001

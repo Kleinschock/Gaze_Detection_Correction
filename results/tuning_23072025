@@ -1,0 +1,66 @@
+(base) PS G:\Studium\WF Machine Learning\Projekt> python -m src.tuning --method bayesian --n_trials 5 
+Starting hyperparameter tuning with Bayesian Search (Optuna)...
+Using device: cuda
+Scanning data files...
+Found 8805 gesture samples from 6 gestures.
+[I 2025-07-23 09:23:49,216] A new study created in memory with name: no-name-78bbac0d-25d0-4c89-b5b2-63714cd3001a
+Creating GRU model with params: {'hidden_size': 128, 'num_layers': 1, 'dropout': 0.34159987265337566}
+Early stopping triggered at epoch 18
+Creating GRU model with params: {'hidden_size': 128, 'num_layers': 1, 'dropout': 0.34159987265337566}
+Early stopping triggered at epoch 10
+Creating GRU model with params: {'hidden_size': 128, 'num_layers': 1, 'dropout': 0.34159987265337566}
+Early stopping triggered at epoch 16
+Creating GRU model with params: {'hidden_size': 128, 'num_layers': 1, 'dropout': 0.34159987265337566}
+Early stopping triggered at epoch 29
+Creating GRU model with params: {'hidden_size': 128, 'num_layers': 1, 'dropout': 0.34159987265337566}
+Early stopping triggered at epoch 16
+[I 2025-07-23 09:28:15,558] Trial 0 finished with value: 0.8849517319704713 and parameters: {'learning_rate': 0.004034524920679015, 'batch_size': 16, 'hidden_size': 128, 'num_layers': 1, 'dropout': 0.34159987265337566, 'weight_decay': 1.179169556331413e-05, 'optimizer': 'adam'}. Best is trial 0 with value: 0.8849517319704713.
+Creating GRU model with params: {'hidden_size': 256, 'num_layers': 2, 'dropout': 0.4097495384518044}
+Creating GRU model with params: {'hidden_size': 256, 'num_layers': 2, 'dropout': 0.4097495384518044}
+Early stopping triggered at epoch 16
+Creating GRU model with params: {'hidden_size': 256, 'num_layers': 2, 'dropout': 0.4097495384518044}
+Creating GRU model with params: {'hidden_size': 256, 'num_layers': 2, 'dropout': 0.4097495384518044}
+Early stopping triggered at epoch 14
+Creating GRU model with params: {'hidden_size': 256, 'num_layers': 2, 'dropout': 0.4097495384518044}
+[I 2025-07-23 09:34:17,293] Trial 1 finished with value: 0.8884724588302101 and parameters: {'learning_rate': 0.00016713562897809696, 'batch_size': 32, 'hidden_size': 256, 'num_layers': 2, 'dropout': 0.4097495384518044, 'weight_decay': 3.2172250022961315e-05, 'optimizer': 'adam'}. Best is trial 1 with value: 0.8884724588302101.
+Creating GRU model with params: {'hidden_size': 128, 'num_layers': 1, 'dropout': 0.4121605297116843}
+Early stopping triggered at epoch 26
+Creating GRU model with params: {'hidden_size': 128, 'num_layers': 1, 'dropout': 0.4121605297116843}
+Early stopping triggered at epoch 23
+Creating GRU model with params: {'hidden_size': 128, 'num_layers': 1, 'dropout': 0.4121605297116843}
+Early stopping triggered at epoch 27
+Creating GRU model with params: {'hidden_size': 128, 'num_layers': 1, 'dropout': 0.4121605297116843}
+Early stopping triggered at epoch 28
+Creating GRU model with params: {'hidden_size': 128, 'num_layers': 1, 'dropout': 0.4121605297116843}
+[I 2025-07-23 09:40:46,967] Trial 2 finished with value: 0.9162975582055651 and parameters: {'learning_rate': 0.0008394585416827452, 'batch_size': 16, 'hidden_size': 128, 'num_layers': 1, 'dropout': 0.4121605297116843, 'weight_decay': 0.00013796584090376983, 'optimizer': 'adamw'}. Best is trial 2 with value: 0.9162975582055651.
+Creating GRU model with params: {'hidden_size': 128, 'num_layers': 2, 'dropout': 0.5304486510862387}
+Creating GRU model with params: {'hidden_size': 128, 'num_layers': 2, 'dropout': 0.5304486510862387}
+Early stopping triggered at epoch 20
+Creating GRU model with params: {'hidden_size': 128, 'num_layers': 2, 'dropout': 0.5304486510862387}
+Early stopping triggered at epoch 27
+Creating GRU model with params: {'hidden_size': 128, 'num_layers': 2, 'dropout': 0.5304486510862387}
+Creating GRU model with params: {'hidden_size': 128, 'num_layers': 2, 'dropout': 0.5304486510862387}
+Early stopping triggered at epoch 23
+[I 2025-07-23 09:46:12,554] Trial 3 finished with value: 0.8790459965928449 and parameters: {'learning_rate': 0.00018659340163082734, 'batch_size': 32, 'hidden_size': 128, 'num_layers': 2, 'dropout': 0.5304486510862387, 'weight_decay': 4.075752050055695e-05, 'optimizer': 'adamw'}. Best is trial 2 with value: 0.9162975582055651.
+Creating GRU model with params: {'hidden_size': 64, 'num_layers': 3, 'dropout': 0.5398623580854693}
+Early stopping triggered at epoch 29
+Creating GRU model with params: {'hidden_size': 64, 'num_layers': 3, 'dropout': 0.5398623580854693}
+Early stopping triggered at epoch 30
+Creating GRU model with params: {'hidden_size': 64, 'num_layers': 3, 'dropout': 0.5398623580854693}
+Early stopping triggered at epoch 18
+Creating GRU model with params: {'hidden_size': 64, 'num_layers': 3, 'dropout': 0.5398623580854693}
+Early stopping triggered at epoch 29
+Creating GRU model with params: {'hidden_size': 64, 'num_layers': 3, 'dropout': 0.5398623580854693}
+[I 2025-07-23 09:51:27,615] Trial 4 finished with value: 0.9011925042589439 and parameters: {'learning_rate': 0.0022441932925728906, 'batch_size': 64, 'hidden_size': 64, 'num_layers': 3, 'dropout': 0.5398623580854693, 'weight_decay': 0.0001864302143111479, 'optimizer': 'adam'}. Best is trial 2 with value: 0.9162975582055651.
+
+--- Hyperparameter Tuning Complete ---
+Best trial:
+  Value: 0.9163
+  Params:
+    learning_rate: 0.0008394585416827452
+    batch_size: 16
+    hidden_size: 128
+    num_layers: 1
+    dropout: 0.4121605297116843
+    weight_decay: 0.00013796584090376983
+    optimizer: adamw
