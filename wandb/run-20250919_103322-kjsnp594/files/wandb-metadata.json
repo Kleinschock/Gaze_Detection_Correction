@@ -1,0 +1,44 @@
+{
+  "os": "Windows-11-10.0.26100-SP0",
+  "python": "CPython 3.12.7",
+  "startedAt": "2025-09-19T08:33:22.766360Z",
+  "args": [
+    "--model",
+    "gru"
+  ],
+  "program": "-m src.train",
+  "git": {
+    "remote": "https://github.com/Kleinschock/Gaze_Detection_Correction",
+    "commit": "8a058ffc1b471f338325e27a7932327c10eb0012"
+  },
+  "email": "goekmen.rene@gmail.com",
+  "root": ".",
+  "host": "DESKTOP-R50QVME",
+  "executable": "C:\\ProgramData\\anaconda3\\python.exe",
+  "cpu_count": 10,
+  "cpu_count_logical": 16,
+  "gpu": "NVIDIA GeForce RTX 4070",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "2000381014016",
+      "used": "1456636899328"
+    }
+  },
+  "memory": {
+    "total": "34163437568"
+  },
+  "cpu": {
+    "count": 10,
+    "countLogical": 16
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4070",
+      "memoryTotal": "12878610432",
+      "cudaCores": 5888,
+      "architecture": "Ada"
+    }
+  ],
+  "cudaVersion": "12.8"
+}

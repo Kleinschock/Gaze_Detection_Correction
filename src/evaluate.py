@@ -1,4 +1,5 @@
 import os
+import argparse
 import glob
 import torch
 import pandas as pd
@@ -79,84 +80,111 @@ def find_latest_model_path(model_type: str) -> str:
     return latest_file
     
 def main():
-    """Main function to evaluate and compare all trained models."""
+    """Main function to evaluate trained models."""
+    parser = argparse.ArgumentParser(description="Evaluate gesture recognition models.")
+    parser.add_argument(
+        "--model_path", 
+        type=str, 
+        default=None,
+        help="Path to a specific model checkpoint (.ckpt) to evaluate. If not provided, all models will be evaluated."
+    )
+    args = parser.parse_args()
+
     if not os.path.exists(RESULTS_DIR):
         os.makedirs(RESULTS_DIR)
 
     print(f"Using device: {DEVICE}")
     
     # 1. Load Test Data
+    # Assuming 'gru' data loading is suitable for all models.
     _, _, test_loader = get_data_loaders(DATA_ROOT, model_type='gru')
 
-    # 2. Evaluate each model
-    model_types = ['ffnn', 'gru']
-    all_reports = {}
-    all_accuracies = {}
+    if args.model_path:
+        # --- Evaluate a single, specified model ---
+        model_path = args.model_path
+        if not os.path.exists(model_path):
+            print(f"Error: Model path not found: {model_path}")
+            return
 
-    for model_type in model_types:
-        print(f"\n--- Evaluating {model_type.upper()} Model ---")
-        
-        # --- FIX: Find the latest .ckpt file instead of a hardcoded .pth file ---
-        model_path = find_latest_model_path(model_type)
-        
-        if not model_path or not os.path.exists(model_path):
-            # Fallback for the old ffnn_baseline.pth if it exists
-            fallback_path = os.path.join(MODEL_DIR, f"{model_type}_baseline.pth")
-            if model_type == 'ffnn' and os.path.exists(fallback_path):
-                 print(f"Warning: Could not find .ckpt for {model_type}. Using legacy {fallback_path}.")
-                 # This part will likely fail if the architecture doesn't match the default.
-                 # It's better to ensure all models are saved as .ckpt files.
-                 try:
-                    sample_x, _ = next(iter(test_loader))
-                    input_size = sample_x.shape[-1]
-                    num_classes = len(GESTURE_LABELS)
-                    model = get_model(model_type, input_size, num_classes).to(DEVICE)
-                    # Add weights_only=True for security as recommended by the warning
-                    model.load_state_dict(torch.load(fallback_path, map_location=DEVICE, weights_only=True))
-                 except Exception as e:
-                    print(f"Failed to load legacy model: {e}. Skipping evaluation.")
-                    continue
-            else:
-                print(f"Warning: Model checkpoint not found for {model_type}. Skipping evaluation.")
-                continue
-        else:
-            print(f"Loading model from: {model_path}")
-            # --- FIX: Load model correctly using the checkpoint ---
-            # This automatically reconstructs the model with the saved hyperparameters
-            try:
-                lightning_module = GestureLightningModule.load_from_checkpoint(
-                    model_path,
-                    map_location=DEVICE
-                )
-                model = lightning_module.model.to(DEVICE)
-            except Exception as e:
-                print(f"Error loading checkpoint {model_path}: {e}. Skipping.")
-                continue
+        model_name = os.path.basename(model_path).split('.ckpt')[0]
+        print(f"\n--- Evaluating Single Model: {model_name.upper()} ---")
+        print(f"Loading model from: {model_path}")
+
+        try:
+            lightning_module = GestureLightningModule.load_from_checkpoint(
+                model_path,
+                map_location=DEVICE
+            )
+            model = lightning_module.model.to(DEVICE)
+        except Exception as e:
+            print(f"Error loading checkpoint {model_path}: {e}.")
+            return
 
         y_true, y_pred = evaluate_model(model, test_loader, DEVICE)
-        report_df, accuracy = generate_report(y_true, y_pred, model_type)
-        all_reports[model_type] = report_df
-        all_accuracies[model_type] = accuracy
+        generate_report(y_true, y_pred, model_name)
 
-    # 3. Save Consolidated Performance Comparison
-    if all_reports:
-        # (This part of the code remains the same)
-        summary_data = {
-            model: {
-                'accuracy': all_accuracies.get(model, 0.0),
-                'f1-score (macro avg)': data.loc['macro avg', 'f1-score']
-            } for model, data in all_reports.items()
-        }
-        summary_df = pd.DataFrame.from_dict(summary_data, orient='index')
-        
-        comparison_path = os.path.join(RESULTS_DIR, 'performance_comparison.csv')
-        summary_df.to_csv(comparison_path)
-        
-        print("\n--- Performance Summary ---")
-        print(summary_df)
-        print(f"\nConsolidated performance comparison saved to {comparison_path}")
     else:
-        print("\nNo models were evaluated. Please train the models first.")
+        # --- Original behavior: Evaluate and compare all models ---
+        print("\n--- Evaluating and Comparing All Models ---")
+        model_types = ['ffnn', 'gru']
+        all_reports = {}
+        all_accuracies = {}
+
+        for model_type in model_types:
+            print(f"\n--- Evaluating {model_type.upper()} Model ---")
+            
+            model_path = find_latest_model_path(model_type)
+            
+            if not model_path or not os.path.exists(model_path):
+                fallback_path = os.path.join(MODEL_DIR, f"{model_type}_baseline.pth")
+                if model_type == 'ffnn' and os.path.exists(fallback_path):
+                     print(f"Warning: Could not find .ckpt for {model_type}. Using legacy {fallback_path}.")
+                     try:
+                        sample_x, _ = next(iter(test_loader))
+                        input_size = sample_x.shape[-1]
+                        num_classes = len(GESTURE_LABELS)
+                        model = get_model(model_type, input_size, num_classes).to(DEVICE)
+                        model.load_state_dict(torch.load(fallback_path, map_location=DEVICE, weights_only=True))
+                     except Exception as e:
+                        print(f"Failed to load legacy model: {e}. Skipping evaluation.")
+                        continue
+                else:
+                    print(f"Warning: Model checkpoint not found for {model_type}. Skipping evaluation.")
+                    continue
+            else:
+                print(f"Loading model from: {model_path}")
+                try:
+                    lightning_module = GestureLightningModule.load_from_checkpoint(
+                        model_path,
+                        map_location=DEVICE
+                    )
+                    model = lightning_module.model.to(DEVICE)
+                except Exception as e:
+                    print(f"Error loading checkpoint {model_path}: {e}. Skipping.")
+                    continue
+
+            y_true, y_pred = evaluate_model(model, test_loader, DEVICE)
+            report_df, accuracy = generate_report(y_true, y_pred, model_type)
+            all_reports[model_type] = report_df
+            all_accuracies[model_type] = accuracy
+
+        if all_reports:
+            summary_data = {
+                model: {
+                    'accuracy': all_accuracies.get(model, 0.0),
+                    'f1-score (macro avg)': data.loc['macro avg', 'f1-score']
+                } for model, data in all_reports.items()
+            }
+            summary_df = pd.DataFrame.from_dict(summary_data, orient='index')
+            
+            comparison_path = os.path.join(RESULTS_DIR, 'performance_comparison.csv')
+            summary_df.to_csv(comparison_path)
+            
+            print("\n--- Performance Summary ---")
+            print(summary_df)
+            print(f"\nConsolidated performance comparison saved to {comparison_path}")
+        else:
+            print("\nNo models were evaluated. Please train the models first.")
 
 if __name__ == '__main__':
     main()

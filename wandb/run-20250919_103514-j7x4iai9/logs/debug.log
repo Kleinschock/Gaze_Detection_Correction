@@ -1,0 +1,24 @@
+2025-09-19 10:35:14,834 INFO    MainThread:6904 [wandb_setup.py:_flush():67] Current SDK version is 0.19.9
+2025-09-19 10:35:14,834 INFO    MainThread:6904 [wandb_setup.py:_flush():67] Configure stats pid to 6904
+2025-09-19 10:35:14,834 INFO    MainThread:6904 [wandb_setup.py:_flush():67] Loading settings from C:\Users\Rene\.config\wandb\settings
+2025-09-19 10:35:14,835 INFO    MainThread:6904 [wandb_setup.py:_flush():67] Loading settings from G:\Studium\WF Machine Learning\Projekt_Korrigiert\TEST\Gaze_Detection_Correction\wandb\settings
+2025-09-19 10:35:14,835 INFO    MainThread:6904 [wandb_setup.py:_flush():67] Loading settings from environment variables
+2025-09-19 10:35:14,835 INFO    MainThread:6904 [wandb_init.py:setup_run_log_directory():662] Logging user logs to .\wandb\run-20250919_103514-j7x4iai9\logs\debug.log
+2025-09-19 10:35:14,835 INFO    MainThread:6904 [wandb_init.py:setup_run_log_directory():663] Logging internal logs to .\wandb\run-20250919_103514-j7x4iai9\logs\debug-internal.log
+2025-09-19 10:35:14,835 INFO    MainThread:6904 [wandb_init.py:init():781] calling init triggers
+2025-09-19 10:35:14,835 INFO    MainThread:6904 [wandb_init.py:init():786] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-09-19 10:35:14,835 INFO    MainThread:6904 [wandb_init.py:init():809] starting backend
+2025-09-19 10:35:14,835 INFO    MainThread:6904 [wandb_init.py:init():813] sending inform_init request
+2025-09-19 10:35:14,866 INFO    MainThread:6904 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=spawn, using: spawn
+2025-09-19 10:35:14,866 INFO    MainThread:6904 [wandb_init.py:init():823] backend started and connected
+2025-09-19 10:35:14,866 INFO    MainThread:6904 [wandb_init.py:init():915] updated telemetry
+2025-09-19 10:35:14,899 INFO    MainThread:6904 [wandb_init.py:init():939] communicating run to backend with 90.0 second timeout
+2025-09-19 10:35:15,752 INFO    MainThread:6904 [wandb_init.py:init():1014] starting run threads in backend
+2025-09-19 10:35:16,135 INFO    MainThread:6904 [wandb_run.py:_console_start():2454] atexit reg
+2025-09-19 10:35:16,135 INFO    MainThread:6904 [wandb_run.py:_redirect():2306] redirect: wrap_raw
+2025-09-19 10:35:16,135 INFO    MainThread:6904 [wandb_run.py:_redirect():2371] Wrapping output streams.
+2025-09-19 10:35:16,135 INFO    MainThread:6904 [wandb_run.py:_redirect():2394] Redirects installed.
+2025-09-19 10:35:16,137 INFO    MainThread:6904 [wandb_init.py:init():1056] run started, returning control to user process
+2025-09-19 10:35:16,138 INFO    MainThread:6904 [wandb_watch.py:_watch():71] Watching
+2025-09-19 10:35:17,704 INFO    MainThread:6904 [wandb_run.py:_config_callback():1327] config_cb None None {'model_name': 'gru', 'input_size': 207, 'model_params': {'hidden_sizes': [128, 64, 32], 'dropout_rate': 0.5}, 'learning_rate': 0.0001, 'weight_decay': 0.0001, 'class_balancing_strategy': 'weighted_loss', 'class_weights': 'tensor([1.9680, 2.1546, 1.3022, 2.4165, 1.3996, 0.3193])'}

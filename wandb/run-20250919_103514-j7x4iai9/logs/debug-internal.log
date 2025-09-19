@@ -1,0 +1,48 @@
+{"time":"2025-09-19T10:35:14.868041+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.9","symlink path":"wandb\\run-20250919_103514-j7x4iai9\\logs\\debug-core.log"}
+{"time":"2025-09-19T10:35:15.2060247+02:00","level":"INFO","msg":"created new stream","id":"j7x4iai9"}
+{"time":"2025-09-19T10:35:15.2065289+02:00","level":"INFO","msg":"stream: started","id":"j7x4iai9"}
+{"time":"2025-09-19T10:35:15.2065289+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"j7x4iai9"}
+{"time":"2025-09-19T10:35:15.2075352+02:00","level":"INFO","msg":"handler: started","stream_id":"j7x4iai9"}
+{"time":"2025-09-19T10:35:15.2075352+02:00","level":"INFO","msg":"sender: started","stream_id":"j7x4iai9"}
+{"time":"2025-09-19T10:35:15.754089+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-09-19T10:36:45.7689394+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:37:00.7629964+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:37:15.7635118+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:37:30.7644424+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:37:45.7633489+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:38:00.7636018+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:38:15.7624784+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:38:30.7625375+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:38:45.7636318+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:39:00.7656679+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:39:15.7625906+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:39:30.7674356+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:39:45.7635819+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:40:00.7628838+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:40:15.7631476+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:40:30.7624082+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:40:45.7677713+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:41:00.7633563+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:41:15.7640874+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:41:30.7708828+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:41:45.7634241+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:42:00.7650646+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:42:15.7688847+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:42:30.7633803+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:42:45.7628924+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:43:00.7659724+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:43:15.7689298+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:43:30.7711553+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:43:45.7637369+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:44:00.7659733+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:44:15.7730539+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:44:30.7623691+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:44:45.7632195+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:45:00.7682906+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:45:15.7634546+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:45:30.763595+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:45:45.7629236+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:46:00.7629817+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:46:15.7618809+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:46:30.7638834+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}
+{"time":"2025-09-19T10:46:45.7633875+02:00","level":"ERROR","msg":"monitor: error sampling metrics: couldn't find pid: 6904"}

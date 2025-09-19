@@ -1,0 +1,35 @@
+[34m[1mwandb[0m: logging graph, to disable use `wandb.watch(log_graph=False)`
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+Starting training for GRU model...
+Running in standard mode (no segmentation).
+Scanning data files...
+Using dedicated idle data strategy for GRU/FFNN models.
+Found 7157 total sequences.
+Dataset split: 5727 training, 715 validation, 715 test samples.
+C:\Users\Rene\AppData\Roaming\Python\Python312\site-packages\pytorch_lightning\callbacks\model_checkpoint.py:658: Checkpoint directory G:\Studium\WF Machine Learning\Projekt_Korrigiert\TEST\Gaze_Detection_Correction\models exists and is not empty.
+
+  | Name                 | Type                      | Params | Mode
+---------------------------------------------------------------------------
+0 | model                | GRUNet                    | 176 K  | train
+1 | criterion            | CrossEntropyLoss          | 0      | train
+2 | train_accuracy       | MulticlassAccuracy        | 0      | train
+3 | val_accuracy         | MulticlassAccuracy        | 0      | train
+4 | test_accuracy        | MulticlassAccuracy        | 0      | train
+5 | val_confusion_matrix | MulticlassConfusionMatrix | 0      | train
+---------------------------------------------------------------------------
+176 K     Trainable params
+0         Non-trainable params
+176 K     Total params
+0.705     Total estimated model params size (MB)
+12        Modules in train mode
+0         Modules in eval mode
+Epoch 3:  27%|▎| 98/358 [00:02<00:07, 33.23it/s, v_num=iai9, train_loss_step=0.544, val_loss=0.746, val_acc=0.690, train_loss
+                                                                                                                             
+Metric val_acc improved. New best score: 0.361
+Epoch 0, global step 358: 'val_acc' reached 0.36084 (best 0.36084), saving model to 'G:\\Studium\\WF Machine Learning\\Projekt_Korrigiert\\TEST\\Gaze_Detection_Correction\\models\\gru_main_model-epoch=00-val_acc=0.3608.ckpt' as top 1
+Metric val_acc improved by 0.214 >= min_delta = 0.001. New best score: 0.575
+Epoch 1, global step 716: 'val_acc' reached 0.57483 (best 0.57483), saving model to 'G:\\Studium\\WF Machine Learning\\Projekt_Korrigiert\\TEST\\Gaze_Detection_Correction\\models\\gru_main_model-epoch=01-val_acc=0.5748-v1.ckpt' as top 1
+Metric val_acc improved by 0.115 >= min_delta = 0.001. New best score: 0.690
+Epoch 2, global step 1074: 'val_acc' reached 0.68951 (best 0.68951), saving model to 'G:\\Studium\\WF Machine Learning\\Projekt_Korrigiert\\TEST\\Gaze_Detection_Correction\\models\\gru_main_model-epoch=02-val_acc=0.6895.ckpt' as top 1

@@ -77,7 +77,6 @@ Der endgültige Merkmalsvektor für jeden Frame kombiniert die normalisierten Ke
 │   ├── train_spotter.py        # Logik für das Training des Spotter-Modells.
 │   ├── tuning.py               # Skript zur Durchführung von Hyperparameter-Sweeps.
 │   └── __init__.py             # Macht das src-Verzeichnis zu einem Python-Paket.
-├── main.py              # Haupt-Einstiegspunkt zur Ausführung von Befehlen.
 ├── requirements.txt     # Python-Abhängigkeiten.
 └── README.md            # Dieses Dokument.
 
@@ -106,6 +105,15 @@ Bewerte ein trainiertes Modell auf dem Test-Set:
 ```bash
 python -m src.evaluate --model gru   # oder --model ffnn
 ```
+
+Mit Hilfe von `--model_path` kann ein spezifischer Checkpoint ausgewählt werden.
+
+For example:
+
+```bash
+python -m src.evaluate --model_path models/your_model_file.ckpt
+```
+
 Ergebnisse (z.B. Konfusionsmatrix) findest du in `results/`.
 
 ## Live-Demo (Gestensteuerung)
@@ -137,5 +145,3 @@ Ein nutzbares Echtzeitsystem erfordert mehr als nur ein genaues Modell. Dieses P
 ---
 
 **Autor:** René Gökmen
-**Version:** 1.0
-**Datum:** 16.07.2025

@@ -243,22 +243,6 @@ A usable real-time system requires more than just an accurate model. This projec
 
 # Changelog
 
-*   **2025-09-19 09:47**: Started live gesture recognition with a specific fine-tuned model.
-    *   **`src/run_live.py`**: Executed the script using the `--model_path` argument to load `models/finetuned_gru_main_model-epoch=04-val_acc=0.9997.ckpt`.
-    *   **Problem Solved**: This allows for the immediate use and evaluation of a specific, high-performance, fine-tuned model in the live environment, bypassing the default behavior of using the most recently created one. This is essential for testing and deploying specific model versions.
-
-*   **2025-09-19 09:24**: Improved the clarity of the evaluation report and fixed a related crash.
-    *   **`src/evaluate.py`**: Modified the script to print the overall accuracy as a separate, clearly labeled metric. The logic was also updated to correctly handle the separated accuracy value when generating the final `performance_comparison.csv`, resolving a `KeyError` crash.
-    *   **Problem Solved**: The previous report format was confusing, and a fix for it introduced a new bug. This change makes the classification report more intuitive and ensures the script runs to completion without errors.
-
-*   **2025-09-19 09:22**: Fixed critical runtime bugs in the evaluation script and corrected a corrupted changelog entry.
-    *   **`src/evaluate.py`**: Added missing `glob` and `GestureLightningModule` imports. Corrected function logic by adding a missing `return` statement in `generate_report` and removing a stray `return` statement from `find_latest_model_path`.
-    *   **`overview.md`**: Corrected a corrupted changelog entry.
-    *   **Problem Solved**: The evaluation script was un-runnable due to import errors and an `AttributeError` that caused it to crash after evaluating the first model. These fixes make the script fully operational, allowing it to run to completion and generate the final `performance_comparison.csv` report. The documentation is also now readable.
-
-*   **2025-09-19 09:00**: Corrected execution commands in documentation to resolve import errors.
-    *   **`README.md`**: Updated the `Training`, `Evaluation`, and `Live-Demo` sections to use `python -m src.<script_name>` instead of `python src/<script_name>.py`.
-    *   **Problem Solved**: The previous commands caused an `ImportError` because they attempted to run files within a package as standalone scripts. The fix ensures the scripts are run as modules, which correctly handles Python's package and import system, making the project runnable from the command line as documented.
 
 *   **2025-07-28 09:52**: Performed a full framework analysis and updated the documentation.
     *   **`overview.md`**: Read all relevant source code files and analyzed the training data structure. Updated the overview to include descriptions for previously undocumented scripts (`evaluate.py`, `scaler.py`, `debug_data_loader.py`) and added a new, detailed section on the raw data format (directory structure, CSV content, and data volume).
