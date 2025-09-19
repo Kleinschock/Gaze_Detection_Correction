@@ -1,0 +1,15 @@
+pytorch-lightning
+wandb
+torch
+torchvision
+torchaudio
+pandas
+seaborn
+matplotlib
+scikit-learn
+opencv-python
+mediapipe
+numpy
+websockets
+ipykernel
+ipywidgets
