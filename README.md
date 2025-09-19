@@ -108,7 +108,7 @@ python -m src.evaluate --model gru   # oder --model ffnn
 
 Mit Hilfe von `--model_path` kann ein spezifischer Checkpoint ausgewählt werden.
 
-For example:
+Zum Beispiel: 
 
 ```bash
 python -m src.evaluate --model_path models/your_model_file.ckpt
