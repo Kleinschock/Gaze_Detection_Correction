@@ -1,8 +1,6 @@
 # Gesture-Based Presentation Control
 
 **Autor:** René Gökmen
-**Datum:** 02.08.2025
-
 ## 1. Projektübersicht
 
 Dieses Projekt implementiert ein robustes System zur Echtzeit-Steuerung von webbasierten Präsentationen (z.B. reveal.js) mittels Gesten, die über eine Standard-Webcam erfasst werden. Es verbindet moderne Computer-Vision-Techniken von MediaPipe zur 3D-Posenschätzung mit Deep-Learning-Modellen (GRU/FFNN), die in PyTorch und PyTorch Lightning entwickelt wurden, um eine intuitive und leistungsfähige Mensch-Computer-Interaktion zu ermöglichen.
